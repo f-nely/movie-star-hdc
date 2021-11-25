@@ -46,8 +46,8 @@ $flassMessage = [];
     </nav>
   </header>
   <?php if(!empty($flassMessage['msg'])): ?>
-
+    <div class="msg-container">
+      <p class="msg <?= $flassMessage['type']?>"><?= $flassMessage['msg'] ?></p>
+    </div>
   <?php endif; ?>
-  <div class="msg-container">
-    <p class="msg">Testando mensagem</p>
-  </div>
+  
