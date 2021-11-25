@@ -2,6 +2,7 @@
 require_once 'globals.php';
 require_once 'db.php';
 
+$flassMessage = [];
 ?>
 
 <!DOCTYPE html>
@@ -44,4 +45,9 @@ require_once 'db.php';
       </div>
     </nav>
   </header>
-  
+  <?php if(!empty($flassMessage['msg'])): ?>
+
+  <?php endif; ?>
+  <div class="msg-container">
+    <p class="msg">Testando mensagem</p>
+  </div>
