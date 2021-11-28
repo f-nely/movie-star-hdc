@@ -68,6 +68,29 @@ if ($type === 'update') {
   // atualizar senha do usuário
 } else if ($type === 'changepassword') {
 
+  // receber dados do post
+  $password = filter_input(INPUT_POST, 'password');
+  $confirmpassword = filter_input(INPUT_POST, 'confirmpassword');
+  
+  // resgata dados do usuário
+  $userData = $userDao->verifyToken();
+  $id = $userData->id;
+
+  if ($password === $confirmpassword) {
+    // criar um novo objeto de usuário
+    $user = new User();
+
+    $finalPassword = $user->generatePassword($password);
+
+    $user->password = $finalPassword;
+    $user->id = $id;
+
+    $userDao->changePassword($user);
+
+  } else {
+    $message->setMessage('As senhas não são iguais!', 'error', 'back');
+  }
+
 } else {
   $message->setMessage('Informações inválidas!', 'error', 'index.php');
 }
