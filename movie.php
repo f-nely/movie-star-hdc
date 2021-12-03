@@ -52,7 +52,11 @@ $alreadyReviewed = false;
         <span class="pipe"></span>
         <span><i class="fas fa-star"></i> 9</span>
       </p>
-      <iframe src="" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encryted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      
+     <div id="trailer">
+      <?= $movie->trailer ?>
+     </div>
+
       <p><?= $movie->description ?></p>
     </div>
     <div class="col-md-4">
