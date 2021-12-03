@@ -59,12 +59,12 @@ if ($movie->image === '') {
           <div class="form-group">
             <label for="category">Categoria:</label>
             <select name="category" id="category" class="form-control">
-              <option value="">Selecione</option>
-              <option value="Ação" <?= $movie->category === 'Ação' ? 'selected' : ''?>>Ação</option>
-              <option value="Drama" <?= $movie->category === 'Drama' ? 'selected' : ''?>Drama</option>
-              <option value="Comédia" <?= $movie->category === 'Comédia' ? 'selected' : ''?>Comédia</option>
-              <option value="Fantasia / Ficção" <?= $movie->category === 'Fantasia / Ficção' ? 'selected' : ''?>Fantasia / Ficção</option>
-              <option value="Romance" <?= $movie->category === 'Romance' ? 'selected' : ''?>Romance</option>
+                <option value="">Selecione</option>
+                <option value="Ação" <?= $movie->category === "Ação" ? "selected" : "" ?>>Ação</option>
+                <option value="Drama" <?= $movie->category === "Drama" ? "selected" : "" ?>>Drama</option>
+                <option value="Comédia" <?= $movie->category === "Comédia" ? "selected" : "" ?>>Comédia</option>
+                <option value="Fantasia / Ficção" <?= $movie->category === "Fantasia / Ficção" ? "selected" : "" ?>>Fantasia / Ficção</option>
+                <option value="Romance" <?= $movie->category === "Romance" ? "selected" : "" ?>>Romance</option>
             </select>
           </div>
           <div class="form-group">
