@@ -20,6 +20,15 @@ class ReviewDAO implements ReviewDAOInterface
 
   public function builReview($data)
   {
+    $reviewObject = new Review();
+
+    $reviewObject->id = $data['id'];
+    $reviewObject->rating = $data['rating'];
+    $reviewObject->review = $data['review'];
+    $reviewObject->users_id = $data['users_id'];
+    $reviewObject->movies_id = $data['movies_id'];
+
+    return $reviewObject;
 
   }
 
