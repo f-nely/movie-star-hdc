@@ -84,7 +84,7 @@ class ReviewDAO implements ReviewDAOInterface
 
   public function hasAlreadyReviewed($id, $userId)
   {
-    
+
     $stmt = $this->conn->prepare("SELECT * FROM reviews WHERE movies_id = :movies_id AND users_id = :users_id");
 
     $stmt->bindParam(':movies_id', $id);
@@ -102,6 +102,29 @@ class ReviewDAO implements ReviewDAOInterface
 
   public function getRating($id)
   {
+    $stmt = $this->conn->prepare("SELECT * FROM reviews WHERE movies_id = :movies_id");
+
+    $stmt->bindParam(':movies_id', $id);
+
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+
+      $rating = 0;
+
+      $reviews = $stmt->fetchAll();
+
+      foreach ($reviews as $review) {
+        $rating += $review['rating'];
+      }
+
+      $rating = round($rating / count($reviews));
+
+    } else {
+      $rating = 'Não avaliado';
+    }
+
+    return $rating;
 
   }
 
