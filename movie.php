@@ -45,8 +45,6 @@ if (!empty($userData)) {
 // resgatar as reviews do filme
 $movieReviews = $reviewDao->getMoviesReview($id);
 
-
-
 ?>
 
 <div id="main-container" class="container-fluid">
@@ -58,7 +56,7 @@ $movieReviews = $reviewDao->getMoviesReview($id);
         <span class="pipe"></span>
         <span><?= $movie->category ?></span>
         <span class="pipe"></span>
-        <span><i class="fas fa-star"></i> 9</span>
+        <span><i class="fas fa-star"></i> <?= $movie->rating ?></span>
       </p>
       
      <div id="trailer">
