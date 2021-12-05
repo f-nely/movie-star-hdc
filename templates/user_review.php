@@ -20,7 +20,7 @@ if ($review->user->image == '') {
     </div>
     <div class="col-md-9 author-details-container">
       <h4 class="author-name">
-        <a href="#"><?= $fullName ?></a>
+        <a href="../profile.php?<?= $review->users_id ?>"><?= $fullName ?></a>
       </h4>
       <p><i class="fas fa-star"></i> <?= $review->rating ?></p>
     </div>
